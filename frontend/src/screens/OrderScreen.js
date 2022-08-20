@@ -61,7 +61,7 @@ const ComponentToPrint = forwardRef(({ order }, ref) => {
                             <ListGroup.Item key={index}>
                                 <Row>
                                     <Col md={1}>
-                                        <Image src={`http://localhost:4000/${item.image}`} style={{maxHeight:'80px', maxWidth:'80px'}} alt={item.name} fluid rounded />
+                                        <Image src={`http://localhost:4000/${item.image}`} style={{maxHeight:'50px', maxWidth:'50px'}} alt={item.name} fluid rounded />
                                     </Col>
 
                                     <Col>
@@ -113,7 +113,7 @@ function OrderScreen({ match, history }) {
     const addPayPalScript = () => {
         const script = document.createElement('script')
         script.type = 'text/javascript'
-        script.src = 'https://www.paypal.com/sdk/js?client-id=AeDXja18CkwFUkL-HQPySbzZsiTrN52cG13mf9Yz7KiV2vNnGfTDP0wDEN9sGlhZHrbb_USawcJzVDgn'
+        script.src = 'https://www.paypal.com/sdk/js?client-id=AX1CoUjgGlMFKWsHqVxZtP8WVDq4-K3ebdIvNoXpCdr6TWT0_VuW4JJTYDxiq0TexEWq7wtB5gnJvK4P'
         script.async = true
 
 
@@ -161,6 +161,7 @@ function OrderScreen({ match, history }) {
             <h1>Order: {order.order._Id}</h1>
             <Row>
 
+                
                 <Col md={8}>
                     <div>
 
@@ -168,7 +169,7 @@ function OrderScreen({ match, history }) {
                         <ReactToPrint content={() => ref.current}>
                             <PrintContextConsumer>
                                 {({ handlePrint }) => (
-                                    <button onClick={handlePrint}>Print this out!</button>
+                                    <button class=" text-right btn btn-info" onClick={handlePrint}>Get Invoice</button>
                                 )}
                             </PrintContextConsumer>
                         </ReactToPrint>
@@ -229,7 +230,7 @@ function OrderScreen({ match, history }) {
 
                                     ) : (
                                         <PayPalButton
-                                            amount={order.order.totalPrice}
+                                            amount={(order.order.totalPrice / 100)}
                                             onSuccess={successPaymentHandler}
                                         />
                                     )}

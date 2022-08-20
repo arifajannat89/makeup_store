@@ -12,10 +12,12 @@ const user = require('../models/user');
 
 
 exports.orderPaid= async (req, res, next) =>{
+    console.log("Payment ", req.body)
     try{
         const pay = {
             isPaid: true,
             paidAt: Date.now(),
+            payment: req.body
         }
         var id = mongoose.Types.ObjectId(req.params.id)
         const filter = { _id: id }

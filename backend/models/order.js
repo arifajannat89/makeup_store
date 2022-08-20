@@ -31,7 +31,9 @@ const orderSchema = new mongoose.Schema({
     },
     deliveredAt:{
         type: Date
-    }
+    },
+    payment: []
+
 }, {timestamps: true});
 
 module.exports = mongoose.model('order', orderSchema);
