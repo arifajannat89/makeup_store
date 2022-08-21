@@ -27,11 +27,11 @@ exports.DPchangeByAdmin = async (req, res, next) => {
         }
         catch (error) {
             res.status(400).json({
-                detail: "an error happend" // 400 == error // data will pass as json //req == request
+                detail: "an error happend" 
             })
         }
         return res.status(200).json({
-            "message": "successfully dp change" // success
+            "message": "successfully dp change" 
         });
     }
     catch (error) {

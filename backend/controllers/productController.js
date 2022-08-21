@@ -212,7 +212,7 @@ exports.getProducts = async (req, res, next) => {
     var topProducts = [];
     for(let i in top)
     {
-        if(top[i].review.length > 0)
+        if(top[i].review.length > 1)
         {
             topProducts.push(top[i]);
         }

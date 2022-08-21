@@ -2,10 +2,11 @@
 import * as React from 'react';
 import { useHistory } from "react-router-dom";
 import Pagination from '@mui/material/Pagination';
+
 export default function Paginate({ pages, page, keyword = '', isAdmin = '' }) {
     const history = useHistory();
 
-    const [cur, setCur] = React.useState(null);
+    const [cur, setCur] = React.useState(null); 
 
     if (keyword) {
         keyword = keyword.split('?keyword=')[1].split('&')[0]

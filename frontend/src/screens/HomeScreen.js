@@ -42,7 +42,8 @@ function HomeScreen({ history }) {
 
 
 
-            <h5 className="mt-5 mb-3 text-center">{keyword ? 'search results' : 'latest product for you'}</h5>
+            <h5 className="mt-5 mb-3 text-center">{keyword && keyword.split('?keyword=')[1].split('&')[0].length > 0 ? 'search results' : 'latest product for you'}</h5>
+        
             {loading ? <Loader />
                 : error ? <Message variant='danger'>{error}</Message>
                     :

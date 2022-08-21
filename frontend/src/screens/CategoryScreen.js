@@ -9,6 +9,7 @@ import Loaders from '../components/Loader';
 
 
 const baseURLCreate = 'http://localhost:4000/api/category/createCategory';
+
 const baseURLgetAllCategories = 'http://localhost:4000/api/category/getAllCategories';
 
 const CategoryScreen = () => {

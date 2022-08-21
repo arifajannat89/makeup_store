@@ -19,10 +19,7 @@ function ProductScreen({ match, history }) {
     const [comment, setComment] = useState('')
     const [show, setShow] = useState(false);
     const [date, setDate] = useState(null)
-    // const [predictPrice, setPredict_price] = useState(null);
-
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
+   
    
 
     const dispatch = useDispatch()
